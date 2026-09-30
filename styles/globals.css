@@ -87,6 +87,41 @@ body {
   padding: 20px;
 }
 
+.search-bar-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 90%;
+  max-width: 400px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid rgb(221, 221, 221);
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.search-bar:focus {
+  border-color: rgb(255, 56, 92);
+  box-shadow: 0 2px 8px rgba(255, 56, 92, 0.2);
+}
+
+.search-bar::placeholder {
+  color: rgb(150, 150, 150);
+}
+
+.no-results {
+  width: 100%;
+  text-align: center;
+  color: rgb(100, 100, 100);
+  font-size: 16px;
+  padding: 40px 20px;
+}
+
 .feed {
   display: flex;
   flex-wrap: wrap;

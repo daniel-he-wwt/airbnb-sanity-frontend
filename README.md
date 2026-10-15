@@ -81,3 +81,13 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Tasks
+
+The `/tasks` page lists all `task` documents from Sanity and lets you delete
+them. Deleting a task calls the `DELETE /api/tasks/:id` API route, which uses
+an authenticated Sanity client to remove the document.
+
+To enable deleting, set a `SANITY_API_TOKEN` environment variable with a
+Sanity API token that has write access (create one in your Sanity project's
+API settings). This token is only used server-side inside the API route and
+is never exposed to the browser.

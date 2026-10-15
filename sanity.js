@@ -25,3 +25,15 @@ export const urlFor = (source) => createImageUrlBuilder(config).image(source)
 
 // Set up the client for fetching data in the getProps page functions
 export const sanityClient = createClient(config)
+
+/**
+ * A separate, authenticated client used for mutations (create/update/delete).
+ * Requires a `SANITY_API_TOKEN` environment variable with write access to be
+ * set on the server. This client should only ever be used server-side (e.g.
+ * inside API routes), never exposed to the browser.
+ **/
+export const sanityWriteClient = createClient({
+  ...config,
+  token: process.env.SANITY_API_TOKEN,
+  useCdn: false,
+})
